@@ -7,7 +7,8 @@ public class BulletFire : MonoBehaviour
     public float bulletSpeed;
     public PlayerJump p;
     private bool direction;
-    // public GameObject deathEffect1,deathEffect2,sound1;
+    public GameObject deathEffect1;
+    // public GameObject deathEffect2,sound1;
     void Start()
     {
         p = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerJump>();
@@ -26,7 +27,7 @@ public class BulletFire : MonoBehaviour
     {
         if(!(hit.gameObject.CompareTag("Player")))
         {// Instantiate(sound1, transform.position, Quaternion.identity);
-        // Instantiate(deathEffect1, transform.position, Quaternion.identity);
+        Instantiate(deathEffect1, transform.position, Quaternion.identity);
         // Instantiate(deathEffect2, transform.position, Quaternion.identity);
         Destroy(gameObject);}   
     }
@@ -34,7 +35,7 @@ public class BulletFire : MonoBehaviour
     {
         if(!(other.CompareTag("Player")))
         {// Instantiate(sound1, transform.position, Quaternion.identity);
-        // Instantiate(deathEffect1, transform.position, Quaternion.identity);
+        Instantiate(deathEffect1, transform.position, Quaternion.identity);
         // Instantiate(deathEffect2, transform.position, Quaternion.identity);
         Destroy(gameObject);}
     }

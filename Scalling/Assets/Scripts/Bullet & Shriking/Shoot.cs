@@ -9,7 +9,7 @@ public class Shoot : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
     private bool canFire = true;
-    // public GameObject bulletFireParticle;
+    public GameObject bulletFireParticle;
     // public GameObject bulletFireParticle2;
     // public GameObject sound1;
     void Update()
@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour
         canFire =false;
         // CameraShaker.Instance.ShakeOnce(1f, 0.7f, 0.1f, 0.1f);
         // Instantiate(sound1,bulletTransform.position,Quaternion.identity);
-        // Instantiate(bulletFireParticle,bulletTransform.position,Quaternion.identity);
+        Instantiate(bulletFireParticle,bulletTransform.position,Quaternion.identity);
         // Instantiate(bulletFireParticle2,bulletTransform.position,Quaternion.identity);
         Instantiate(bullet,bulletTransform.position,Quaternion.identity);
 

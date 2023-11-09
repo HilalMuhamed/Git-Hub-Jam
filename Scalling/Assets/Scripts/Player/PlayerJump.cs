@@ -14,7 +14,7 @@ public class PlayerJump : MonoBehaviour
 
     // Dashing
     private bool canDash = true;
-    public bool facingRight;
+    public bool facingRight = false;
     private bool isDashing;
     public float dashingPower = 24f;
     public float dashingTime = 0.2f;
