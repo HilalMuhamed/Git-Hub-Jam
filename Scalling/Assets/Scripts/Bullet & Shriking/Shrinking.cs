@@ -12,7 +12,7 @@ public class Shrinking : MonoBehaviour
     public GameObject particles;
     private Rigidbody2D rb;
 
-    private bool isSwitched = false;
+    public bool isSwitched = false;
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class Shrinking : MonoBehaviour
                 // scriptB.enabled = false;
                 // animator.runtimeAnimatorController = controller1;
                 rb.mass *= 5f;
-                transform.localScale = new Vector3(2f, 2f, 2f);
+                transform.localScale *= 2f; 
                 Instantiate(particles, transform.position, Quaternion.identity);
             }
             else
@@ -41,7 +41,7 @@ public class Shrinking : MonoBehaviour
                 // scriptB.enabled = true;
                 // animator.runtimeAnimatorController = controller2;
                 rb.mass /= 5f;
-                transform.localScale = new Vector3(1f, 1f, 1f);
+                transform.localScale /= 2f; 
                 Instantiate(particles, transform.position, Quaternion.identity);
             }
         }
