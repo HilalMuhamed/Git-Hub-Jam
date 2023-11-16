@@ -7,8 +7,9 @@ public class PatrolScript : MonoBehaviour
    public GameObject Point1,Point2;
    public float speed;
    private Rigidbody2D rb;
-   private Transform currenPoint;
    private bool direction = true;
+   private GameObject player;
+   private Vector3 offset;
    void Start()
    {
     rb=GetComponent<Rigidbody2D>();
@@ -28,16 +29,23 @@ public class PatrolScript : MonoBehaviour
     {transform.position = Vector2.MoveTowards(transform.position,Point1.transform.position,speed*Time.deltaTime);}
     else
     {transform.position = Vector2.MoveTowards(transform.position,Point2.transform.position,speed*Time.deltaTime);}
+    if (player != null)
+    {
+            player.transform.position = transform.position + offset;
+    }
    }
    private void OnCollisionEnter2D(Collision2D other)
    {
         if(other.gameObject.CompareTag("Player"))
-        {other.transform.SetParent(transform);}
+        {
+            player = other.gameObject;
+            offset = player.transform.position - transform.position;
+        }
    }
    private void OnCollisionExit2D(Collision2D other)
    {
         if(other.gameObject.CompareTag("Player"))
-        {other.transform.SetParent(null);}
+        {player = null;}
    }
    
    private void OnDrawGizmos()

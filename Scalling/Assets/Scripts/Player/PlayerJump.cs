@@ -36,17 +36,22 @@ public class PlayerJump : MonoBehaviour
     // public ParticleSystem Jumpdust;
     // public ParticleSystem Movedust;
     // public ParticleSystem deathParticle;
+    public Animator animator;
 
     public int life =1;
+    float originalGravity  = 1f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        animator=GetComponent<Animator>();
+        float originalGravity = rb.gravityScale;
     }
 
     void Update()
     {
+        animator.SetBool("isJumping",isJumping);
         if(!isJumping)
         {
             coyoteTimeCounter = coyoteTime;
@@ -109,7 +114,7 @@ public class PlayerJump : MonoBehaviour
             coyoteTimeCounter = 0f;
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash){
-            StartCoroutine(Dash());
+            // StartCoroutine(Dash());
         }
 
     }
@@ -126,17 +131,28 @@ public class PlayerJump : MonoBehaviour
             isJumping = false;
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("DashGround"))
+        {
+            StartCoroutine(Dash());
+        }
+    }
 
     
     private IEnumerator Dash(){
 
         canDash = false;
         isDashing = true;
-        float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         // FindObjectOfType<AudioManager>().Play("DashSound");
         // Instantiate(dashEffect, transform.position, Quaternion.identity);
-        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        if(facingRight)
+        {rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);}
+        else
+        {
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower*-1, 0f);
+        }
         // tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
         // tr.emitting = false;

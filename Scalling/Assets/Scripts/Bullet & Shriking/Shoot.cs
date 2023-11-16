@@ -9,11 +9,18 @@ public class Shoot : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
     private bool canFire = true;
+    private bool isShooting = false;
     public GameObject bulletFireParticle;
     // public GameObject bulletFireParticle2;
     // public GameObject sound1;
+    public Animator animator;
+    void Start()
+    {
+        animator=GetComponent<Animator>();
+    }
     void Update()
     {
+    animator.SetBool("Shooting",isShooting);
     if(!canFire)
     {
         timer +=Time.deltaTime;
@@ -25,13 +32,14 @@ public class Shoot : MonoBehaviour
     }
     if(Input.GetMouseButton(0) && canFire)
     {
+        isShooting=true;
         canFire =false;
         // CameraShaker.Instance.ShakeOnce(1f, 0.7f, 0.1f, 0.1f);
         // Instantiate(sound1,bulletTransform.position,Quaternion.identity);
         Instantiate(bulletFireParticle,bulletTransform.position,Quaternion.identity);
         // Instantiate(bulletFireParticle2,bulletTransform.position,Quaternion.identity);
         Instantiate(bullet,bulletTransform.position,Quaternion.identity);
-
     }
+    else{isShooting=false;}
 }
 }

@@ -11,31 +11,40 @@ public class PlayerMove : MonoBehaviour {
 	float horizontalMove = 0f;
 	bool jump = false;
 	// bool crouch = false;
+	public Animator animator;
+	private SpriteRenderer spriteRenderer;
+	public GameObject ShootPoint;
 	
-	// Update is called once per frame
+	void Start()
+	{
+		animator=GetComponent<Animator>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+	}
 	void Update () {
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-		// if (Input.GetButtonDown("Jump"))
-		// {
-		// 	jump = true;
-		// }
-
-		// if (Input.GetButtonDown("Crouch"))
-		// {
-		// 	crouch = true;
-		// } else if (Input.GetButtonUp("Crouch"))
-		// {
-		// 	crouch = false;
-		// }
+		animator.SetFloat("speed",Mathf.Abs(horizontalMove));
+		if (horizontalMove > 0)
+        {
+            spriteRenderer.flipX = false;
+			SetShootPointPosition(Vector3.right);
+        }
+        else if (horizontalMove < 0)
+        {
+            spriteRenderer.flipX = true;
+			SetShootPointPosition(Vector3.left);
+        }
 
 	}
 
 	void FixedUpdate ()
 	{
-		// Move our character
+		// Move character
 		controller.Move(horizontalMove * Time.fixedDeltaTime, true, jump);
 		jump = false;
 	}
+	    private void SetShootPointPosition(Vector3 direction)
+    {
+        ShootPoint.transform.localPosition = new Vector3(direction.x, 0, 0);
+    }
 }
