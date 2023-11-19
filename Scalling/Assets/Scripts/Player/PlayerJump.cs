@@ -31,6 +31,7 @@ public class PlayerJump : MonoBehaviour
     public float fallDistance = -50f;
     public int Respawn;
     public Transform player;
+    public GameObject Particles;
 
     // public GameObject dashEffect;
     // public ParticleSystem Jumpdust;
@@ -130,6 +131,12 @@ public class PlayerJump : MonoBehaviour
         {
             isJumping = false;
         }
+        if(other.gameObject.CompareTag("Ballon"))
+        {Instantiate(Particles,transform.position,Quaternion.identity);}
+    }
+    void OnCollisionExit(Collision other)
+    {
+        Instantiate(Particles,transform.position,Quaternion.identity);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
