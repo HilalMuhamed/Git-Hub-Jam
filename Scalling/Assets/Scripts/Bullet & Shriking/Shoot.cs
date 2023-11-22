@@ -14,6 +14,8 @@ public class Shoot : MonoBehaviour
     // public GameObject bulletFireParticle2;
     // public GameObject sound1;
     public Animator animator;
+
+    public PiGrapleHook piGrapleHook;
     void Start()
     {
         animator=GetComponent<Animator>();
@@ -30,7 +32,7 @@ public class Shoot : MonoBehaviour
             timer =0;
         }
     }
-    if(Input.GetMouseButton(0) && canFire)
+    if(Input.GetMouseButton(0) && canFire && !piGrapleHook._distanceJoint.enabled)
     {
         isShooting=true;
         canFire =false;

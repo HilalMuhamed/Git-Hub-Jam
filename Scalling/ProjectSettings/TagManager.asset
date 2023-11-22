@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - DashGround
   - Ballon
+  - PI
   layers:
   - Default
   - TransparentFX
