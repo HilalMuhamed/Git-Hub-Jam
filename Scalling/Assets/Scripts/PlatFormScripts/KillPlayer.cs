@@ -4,18 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class KillPlayer : MonoBehaviour
 {
+    public Animator transition;
+    public float transitionTime = 1;
     public GameObject deathParticle;
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             Instantiate(deathParticle,other.gameObject.transform.position,Quaternion.identity);
-            other.gameObject.SetActive(false);
-            Invoke("RestartGame",2f);
+            StartCoroutine(LoadLevel((SceneManager.GetActiveScene().buildIndex ),other));
         }
     }
-    void RestartGame()
+    IEnumerator LoadLevel(int levelIndex,Collision2D other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        other.gameObject.SetActive(false);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        Debug.Log("Next Level Reached");
+        SceneManager.LoadScene(levelIndex);
     }
 }

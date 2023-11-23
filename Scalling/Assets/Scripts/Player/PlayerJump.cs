@@ -33,7 +33,7 @@ public class PlayerJump : MonoBehaviour
     public Transform player;
     public GameObject Particles;
 
-    // public GameObject dashEffect;
+    public GameObject dashEffect;
     // public ParticleSystem Jumpdust;
     // public ParticleSystem Movedust;
     // public ParticleSystem deathParticle;
@@ -61,7 +61,7 @@ public class PlayerJump : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
-        if(player.position.y <= fallDistance)
+        if(player.position.y <= fallDistance || player.position.y>=-fallDistance)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             
@@ -153,7 +153,7 @@ public class PlayerJump : MonoBehaviour
         isDashing = true;
         rb.gravityScale = 0f;
         // FindObjectOfType<AudioManager>().Play("DashSound");
-        // Instantiate(dashEffect, transform.position, Quaternion.identity);
+        Instantiate(dashEffect, transform.position, Quaternion.identity);
         if(facingRight)
         {rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);}
         else

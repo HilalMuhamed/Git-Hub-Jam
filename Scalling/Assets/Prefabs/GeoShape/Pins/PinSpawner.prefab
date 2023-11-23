@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3959465986198830081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3959465986198830082}
+  - component: {fileID: 3959465986198830083}
+  - component: {fileID: 867446942723730753}
+  - component: {fileID: 867446942723730752}
+  - component: {fileID: 867446942723730755}
+  m_Layer: 0
+  m_Name: PinSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3959465986198830082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959465986198830081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: -20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3959465986198830083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959465986198830081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1bedeb37896164882392a1aa5f21b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ballon: {fileID: 4858880532933278426, guid: 98d3270d321f3a44680ca9c995abce9a, type: 3}
+  Particles: {fileID: 670820549221940950, guid: 043ba199df8904641bab42eb6db4fc9f, type: 3}
+  spawnSpot:
+  - {fileID: 3959465986198830082}
+  startTimeBetWeenSpawn: 5
+  TimeDecrease: 0
+  minTime: 5
+--- !u!114 &867446942723730753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959465986198830081}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1bedeb37896164882392a1aa5f21b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ballon: {fileID: 8345595622706473006, guid: 6d8c8918462b5304090ee7db860eef77, type: 3}
+  Particles: {fileID: 670820549221940950, guid: 043ba199df8904641bab42eb6db4fc9f, type: 3}
+  spawnSpot:
+  - {fileID: 3959465986198830082}
+  startTimeBetWeenSpawn: 8
+  TimeDecrease: 0
+  minTime: 5
+--- !u!114 &867446942723730752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959465986198830081}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1bedeb37896164882392a1aa5f21b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ballon: {fileID: 272031402835763479, guid: ca3389507fb93774c93bb85e853b8780, type: 3}
+  Particles: {fileID: 670820549221940950, guid: 043ba199df8904641bab42eb6db4fc9f, type: 3}
+  spawnSpot:
+  - {fileID: 3959465986198830082}
+  startTimeBetWeenSpawn: 7
+  TimeDecrease: 0
+  minTime: 5
+--- !u!114 &867446942723730755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959465986198830081}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1bedeb37896164882392a1aa5f21b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ballon: {fileID: 743193903561226530, guid: 9302f4157d69a4e44a3417f291c95cf5, type: 3}
+  Particles: {fileID: 670820549221940950, guid: 043ba199df8904641bab42eb6db4fc9f, type: 3}
+  spawnSpot:
+  - {fileID: 3959465986198830082}
+  startTimeBetWeenSpawn: 6
+  TimeDecrease: 0
+  minTime: 5

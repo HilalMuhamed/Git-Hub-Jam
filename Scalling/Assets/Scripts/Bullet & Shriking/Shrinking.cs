@@ -31,8 +31,8 @@ public class Shrinking : MonoBehaviour
                 // scriptA.enabled = true;
                 // scriptB.enabled = false;
                 // animator.runtimeAnimatorController = controller1;
-                rb.mass *= 5f;
-                transform.localScale *= 2f; 
+                rb.mass *= 10f;
+                transform.localScale *= 4f; 
                 Instantiate(particles, transform.position, Quaternion.identity);
             }
             else
@@ -40,8 +40,8 @@ public class Shrinking : MonoBehaviour
                 // scriptA.enabled = false;
                 // scriptB.enabled = true;
                 // animator.runtimeAnimatorController = controller2;
-                rb.mass /= 5f;
-                transform.localScale /= 2f; 
+                rb.mass /= 10f;
+                transform.localScale /= 4f; 
                 Instantiate(particles, transform.position, Quaternion.identity);
             }
         }
