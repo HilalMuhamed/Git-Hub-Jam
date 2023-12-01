@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705ac08cdd01f3242a0fa6331d34fed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounce: 6
+  bounce: 8
 --- !u!114 &66465613864407353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5705da3d0de8ccd4c886519aceaae2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstacleSpeed: 3
-  DestroyTime: 10
+  ObstacleSpeed: 8
+  DestroyTime: 14
   deathparticle1: {fileID: 670820549221940950, guid: 043ba199df8904641bab42eb6db4fc9f, type: 3}

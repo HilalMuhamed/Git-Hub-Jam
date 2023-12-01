@@ -13,7 +13,7 @@ public class PiGrapleHook : MonoBehaviour
     public float grapplingHookSpeedMultiplier = 2f; 
     public float grapplingHookGravityMultiplier = 2f; 
     private Rigidbody2D playerRigidbody;
-    public GameObject GrapelParticle;
+    public GameObject GrapelParticle,sound1;
     void Start()
     {
         _distanceJoint.enabled = false;
@@ -30,6 +30,7 @@ public class PiGrapleHook : MonoBehaviour
             {
                 Vector2 piPos = piCollider.transform.position;
                 Instantiate(GrapelParticle,piCollider.transform.position,Quaternion.identity);
+                Instantiate(sound1,transform.position,Quaternion.identity);
                 _lineRenderer.SetPosition(0, piPos);
                 _lineRenderer.SetPosition(1, transform.position);
                 _distanceJoint.connectedAnchor = piPos;

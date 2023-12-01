@@ -9,9 +9,4 @@ public class PIRadius : MonoBehaviour
     {
         p=GameObject.FindWithTag("Player").GetComponent<PiGrapleHook>();
     }
-   void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.green;
-        Handles.DrawWireDisc(transform.position,transform.forward,p.maxDistance);    
-    }
 }

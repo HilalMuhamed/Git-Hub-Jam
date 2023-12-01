@@ -11,8 +11,7 @@ public class Shoot : MonoBehaviour
     private bool canFire = true;
     private bool isShooting = false;
     public GameObject bulletFireParticle;
-    // public GameObject bulletFireParticle2;
-    // public GameObject sound1;
+    public GameObject sound1;
     public Animator animator;
 
     public PiGrapleHook piGrapleHook;
@@ -32,14 +31,12 @@ public class Shoot : MonoBehaviour
             timer =0;
         }
     }
-    if(Input.GetMouseButton(0) && canFire && !piGrapleHook._distanceJoint.enabled)
+    if((Input.GetMouseButton(0)||Input.GetKeyDown(KeyCode.LeftShift)) && canFire && !piGrapleHook._distanceJoint.enabled)
     {
         isShooting=true;
         canFire =false;
-        // CameraShaker.Instance.ShakeOnce(1f, 0.7f, 0.1f, 0.1f);
-        // Instantiate(sound1,bulletTransform.position,Quaternion.identity);
+        Instantiate(sound1,bulletTransform.position,Quaternion.identity);
         Instantiate(bulletFireParticle,bulletTransform.position,Quaternion.identity);
-        // Instantiate(bulletFireParticle2,bulletTransform.position,Quaternion.identity);
         Instantiate(bullet,bulletTransform.position,Quaternion.identity);
     }
     else{isShooting=false;}

@@ -37,6 +37,7 @@ public class PlayerJump : MonoBehaviour
     // public ParticleSystem Jumpdust;
     // public ParticleSystem Movedust;
     // public ParticleSystem deathParticle;
+    public GameObject sound1,sound2,sound3;
     public Animator animator;
 
     public int life =1;
@@ -101,7 +102,7 @@ public class PlayerJump : MonoBehaviour
 
         if (JumpBufferTimeCounter > 0f && coyoteTimeCounter > 0f)
         {
-            // FindObjectOfType<AudioManager>().Play("JumpSound");
+            Instantiate(sound1,transform.position,Quaternion.identity);
             rb.AddForce(new Vector2(rb.velocity.x, jump));
             JumpBufferTimeCounter = 0f;
             isJumping = true;
@@ -132,7 +133,10 @@ public class PlayerJump : MonoBehaviour
             isJumping = false;
         }
         if(other.gameObject.CompareTag("Ballon"))
-        {Instantiate(Particles,transform.position,Quaternion.identity);}
+        {
+            Instantiate(Particles,transform.position,Quaternion.identity);
+            Instantiate(sound1,transform.position,Quaternion.identity);
+        }
     }
     void OnCollisionExit(Collision other)
     {
@@ -152,7 +156,7 @@ public class PlayerJump : MonoBehaviour
         canDash = false;
         isDashing = true;
         rb.gravityScale = 0f;
-        // FindObjectOfType<AudioManager>().Play("DashSound");
+        Instantiate(sound3,transform.position,Quaternion.identity);
         Instantiate(dashEffect, transform.position, Quaternion.identity);
         if(facingRight)
         {rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);}

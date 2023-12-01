@@ -8,7 +8,7 @@ public class BulletFire : MonoBehaviour
     public PlayerJump p;
     private bool direction;
     public GameObject deathEffect1;
-    // public GameObject deathEffect2,sound1;
+
     void Start()
     {
         p = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerJump>();

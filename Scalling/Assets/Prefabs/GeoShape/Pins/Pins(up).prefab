@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8345595622706473002}
   - component: {fileID: 8345595622706473001}
   - component: {fileID: 8345595622706473000}
-  - component: {fileID: 8345595622706473007}
+  - component: {fileID: -8677327436209117595}
   m_Layer: 0
   m_Name: Pins(up)
   m_TagString: Untagged
@@ -184,7 +184,7 @@ MonoBehaviour:
   ObstacleSpeed: 8
   DestroyTime: 10
   deathparticle1: {fileID: 670820549221940950, guid: 043ba199df8904641bab42eb6db4fc9f, type: 3}
---- !u!114 &8345595622706473007
+--- !u!114 &-8677327436209117595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,9 +193,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8345595622706473006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ee5e42ff8a7ee4ab1f3ede9c5d2ae5, type: 3}
+  m_Script: {fileID: 11500000, guid: 08b2640f4fe80fc4b9c0906e205b6ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
   transitionTime: 1
   deathParticle: {fileID: 9084872075585623473, guid: e8230114dae2ae94eb1300628ec1eb5f, type: 3}
+  sound1: {fileID: 2757149952342741038, guid: 8908d40875482744ea5eed768ff5a87b, type: 3}

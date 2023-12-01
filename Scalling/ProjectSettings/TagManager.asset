@@ -10,6 +10,8 @@ TagManager:
   - DashGround
   - Ballon
   - PI
+  - CameraBound
+  - SceneTransition
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - Ground
   - Player
   - 
-  - 
-  - 
+  - CameraBound
+  - Camera
   - 
   - 
   - 
@@ -46,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: TopLayer
+    uniqueID: 119453013
     locked: 0

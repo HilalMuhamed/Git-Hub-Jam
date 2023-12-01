@@ -446,11 +446,14 @@ MonoBehaviour:
   facingRight: 0
   dashingPower: 80
   dashingTime: 0.2
-  fallDistance: -50
+  fallDistance: -40
   Respawn: 0
   player: {fileID: 2158034946754633511}
   Particles: {fileID: 670820549221940950, guid: 043ba199df8904641bab42eb6db4fc9f, type: 3}
   dashEffect: {fileID: 2092707282324212693, guid: 21db838241bd02a42b32ac357b1e5a87, type: 3}
+  sound1: {fileID: 2635253594209159987, guid: 69e84d08e0d47c6468e54bed65c636b9, type: 3}
+  sound2: {fileID: 2635253594209159987, guid: 69e84d08e0d47c6468e54bed65c636b9, type: 3}
+  sound3: {fileID: 4480428926955198613, guid: 1c78b9c1049a9cc4bb6843d236811ff2, type: 3}
   animator: {fileID: 2158034946754633513}
   life: 1
 --- !u!114 &2158034946754633512
@@ -469,6 +472,7 @@ MonoBehaviour:
   bulletTransform: {fileID: 2158034946482969411}
   timeBetweenFiring: 1
   bulletFireParticle: {fileID: 9084872075585623473, guid: e8230114dae2ae94eb1300628ec1eb5f, type: 3}
+  sound1: {fileID: 4808552063076683556, guid: 280dd58c4658f37428d9e091cf64521a, type: 3}
   animator: {fileID: 2158034946754633513}
   piGrapleHook: {fileID: 2158034946754633517}
 --- !u!95 &2158034946754633513
@@ -643,6 +647,7 @@ MonoBehaviour:
   grapplingHookSpeedMultiplier: 4
   grapplingHookGravityMultiplier: 4
   GrapelParticle: {fileID: 7603000674047046332, guid: e54815412622d284783ce523b41db165, type: 3}
+  sound1: {fileID: 4480428926955198613, guid: 1d48778710862154abc992919ee65218, type: 3}
 --- !u!1 &2158034946861537234
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class PotractorFollowScript : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D hit)
     {
-        Instantiate(deathparticle1,transform.position,Quaternion.identity);
-        Destroy(gameObject);
+        if(hit.gameObject.CompareTag("CameraBound")){Instantiate(deathparticle1,transform.position,Quaternion.identity);
+        Destroy(gameObject);}
     }
 }

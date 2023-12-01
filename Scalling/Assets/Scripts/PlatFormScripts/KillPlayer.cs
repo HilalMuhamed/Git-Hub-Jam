@@ -6,12 +6,17 @@ public class KillPlayer : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1;
-    public GameObject deathParticle;
+    public GameObject deathParticle,sound1;
+    void Start()
+    {
+        transition =  GameObject.FindGameObjectWithTag("SceneTransition").GetComponent<Animator>();;
+    }
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             Instantiate(deathParticle,other.gameObject.transform.position,Quaternion.identity);
+            Instantiate(sound1,other.gameObject.transform.position,Quaternion.identity);
             StartCoroutine(LoadLevel((SceneManager.GetActiveScene().buildIndex ),other));
         }
     }

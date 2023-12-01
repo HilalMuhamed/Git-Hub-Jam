@@ -15,7 +15,7 @@ public class ObjectMovement : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D hit)
     {
-        if(!gameObject.CompareTag("Ballon")&&!hit.gameObject.CompareTag("Player"))
+        if(!gameObject.CompareTag("Ballon")&&!hit.gameObject.CompareTag("Player")&&!hit.gameObject.CompareTag("Player"))
         {Instantiate(deathparticle1,transform.position,Quaternion.identity);
         Destroy(gameObject);}
     }

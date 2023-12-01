@@ -122,6 +122,7 @@ MonoBehaviour:
   transition: {fileID: 0}
   transitionTime: 1
   deathParticle: {fileID: 9084872075585623473, guid: e8230114dae2ae94eb1300628ec1eb5f, type: 3}
+  sound1: {fileID: 2757149952342741038, guid: 8908d40875482744ea5eed768ff5a87b, type: 3}
 --- !u!70 &2115509080266661249
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

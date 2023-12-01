@@ -11,7 +11,7 @@ public class Shrinking : MonoBehaviour
     // public RuntimeAnimatorController controller2;
     public GameObject particles;
     private Rigidbody2D rb;
-
+    public GameObject sound1;
     public bool isSwitched = false;
 
     private void Start()
@@ -25,6 +25,7 @@ public class Shrinking : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             isSwitched = !isSwitched;
+            Instantiate(sound1,transform.position,Quaternion.identity);
 
             if (isSwitched)
             {

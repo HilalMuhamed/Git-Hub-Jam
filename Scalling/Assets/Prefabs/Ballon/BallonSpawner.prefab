@@ -47,6 +47,6 @@ MonoBehaviour:
   Particles: {fileID: 670820549221940950, guid: 043ba199df8904641bab42eb6db4fc9f, type: 3}
   spawnSpot:
   - {fileID: 2183530492977914528}
-  startTimeBetWeenSpawn: 4
+  startTimeBetWeenSpawn: 6
   TimeDecrease: 0
   minTime: 5

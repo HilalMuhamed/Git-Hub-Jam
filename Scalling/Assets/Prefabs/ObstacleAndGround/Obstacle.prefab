@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 9084872075585623473, guid: e8230114dae2ae94eb1300628ec1eb5f, type: 3}
+  sound1: {fileID: 4480428926955198613, guid: 7eba590d5ae200e419da4afa84ea8155, type: 3}
   isSwitched: 0
 --- !u!50 &7541774095450996557
 Rigidbody2D:
@@ -141,7 +142,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 5fc835eb785fbee48bba03368355c2a5, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
